@@ -4,7 +4,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan'
-import dotenv from 'dotenv'
+import { testConnection } from './mongo-db'
 
 
 console.log('host:', process.env.DB_HOST)
@@ -30,3 +30,5 @@ app.listen(3030, () => {
 })
 
 export default app
+
+testConnection()
