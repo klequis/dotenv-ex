@@ -10,6 +10,7 @@ import { testConnection } from './mongo-db'
 console.log('host:', process.env.DB_HOST)
 console.log('username:', process.env.DB_USER)
 console.log('password:', process.env.DB_PASS)
+console.log('PORT:', process.env.PORT)
 
 const app = express()
 
@@ -23,10 +24,10 @@ app.get('/', (req, res) => {
 })
 
 
-// const port = 3030
+const port = process.env.PORT
 
-app.listen(3030, () => {
-  console.log(`Events API server is listening on port ${3030}`)
+app.listen(port, () => {
+  console.log(`Events API server is listening on port ${port}`)
 })
 
 export default app
