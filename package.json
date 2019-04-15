@@ -4,12 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "babel-node": "babel-node index.js",
+    "clean-dist": "rm -rf dist",
+    "transcompile": "babel . -d dist --ignore node_modules",
+    "copy": "cp package.json dist/package.json && cp .env dist/.env",
+    "install-prod": "cd dist && npm i --production",
+    "build": "npm run-script clean-dist && npm run-script transcompile && npm run-script copy && npm run-script install-prod"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime": "^7.4.3",
     "dotenv": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
   }
 }
