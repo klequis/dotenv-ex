@@ -10,7 +10,7 @@
     "nodemon-babel-node": "nodemon --exec babel-node index.js",
     "clean-dist": "rm -rf dist",
     "transcompile": "babel . -d dist --ignore node_modules",
-    "copy": "cp package.json dist/package.json && cp .env dist/.env",
+    "copy": "cp package.json dist/package.json && cp ../env dist/.env",
     "install-prod": "cd dist && npm i --production",
     "build": "npm run-script clean-dist && npm run-script transcompile && npm run-script copy && npm run-script install-prod"
   },
