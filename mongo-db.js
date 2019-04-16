@@ -1,6 +1,10 @@
 import mongodb from 'mongodb'
 const MongoClient = mongodb.MongoClient
 
+console.log('host:', process.env.DB_HOST)
+console.log('username:', process.env.DB_USER)
+console.log('password:', process.env.DB_PASS)
+console.log('PORT:', process.env.PORT)
 
 const mongoUrl = 'mongodb+srv://todo-db-admin:D92dARWONO0t16uF@todo-cluster0-ilc7v.mongodb.net/test?retryWrites=true'
 
