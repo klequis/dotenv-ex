@@ -4,7 +4,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan'
-import { testConnection } from '../mongo-db'
+// import { testConnection } from '../mongo-db'
 
 
 console.log('host:', process.env.DB_HOST)
@@ -32,4 +32,4 @@ app.listen(port, () => {
 
 export default app
 
-testConnection()
+// testConnection()
